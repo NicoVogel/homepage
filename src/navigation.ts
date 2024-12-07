@@ -14,8 +14,8 @@ export const footerData = {
   links: [],
   secondaryLinks: [{ text: 'Legal Notice', href: getPermalink('/legal') }],
   socialLinks: [
-    { ariaLabel: 'LinkedIn', icon: 'tabler:brand-linkedin', href: 'https://www.linkedin.com/in/nico-vogel-b3b1a01a5/' },
-    { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/nico-vogel' },
+    { ariaLabel: 'LinkedIn', icon: 'tabler:brand-linkedin', href: 'https://www.linkedin.com/in/nico-vogel-49a196196/' },
+    { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/nicovogel' },
   ],
   footNote: `
     © Vogel Tec AB 2024. All rights reserved.
