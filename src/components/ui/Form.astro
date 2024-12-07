@@ -5,7 +5,7 @@ import Button from '~/components/ui/Button.astro';
 const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } = Astro.props;
 ---
 
-<form>
+<form data-contact-us>
   {
     inputs &&
       inputs.map(
@@ -85,3 +85,24 @@ const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } 
     )
   }
 </form>
+
+<script>
+  const form = document.querySelector<HTMLFormElement>('[data-contact-us]');
+
+  if (form) {
+    form.onsubmit = (event) => {
+      event.preventDefault();
+
+      const form = event.target;
+      const name = form!['0'].value;
+      const company = form!['1'].value || 'N/A';
+      const email = form!['2'].value;
+      const message = form!['3'].value;
+
+      const subject = encodeURIComponent('Contact Form Submission');
+      const body = encodeURIComponent(`Name: ${name}\nCompany Name: ${company}\nEmail: ${email}\nMessage:\n${message}`);
+
+      window.location.href = `mailto:hello@vogel-tec.dev?subject=${subject}&body=${body}`;
+    };
+  }
+</script>
