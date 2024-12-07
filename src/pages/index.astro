@@ -6,6 +6,7 @@ import Features from '~/components/widgets/Features.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import Content from '~/components/widgets/Content.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import { getPermalink } from '~/utils/permalinks';
 
 const metadata = {
   title: 'Vogel Tec AB',
@@ -14,20 +15,15 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
-
   <Hero
     actions={[
-      // todo: add actual buttons
-      // contact, portfolio
       {
         variant: 'primary',
-        text: 'Get template',
-        href: 'https://github.com/onwidget/astrowind',
-        target: '_blank',
-        icon: 'tabler:download',
+        text: 'Portfolio',
+        href: getPermalink('/portfolio'),
+        icon: 'tabler:briefcase',
       },
-      { text: 'Learn more', href: '#features' },
+      { text: 'Contact', href: getPermalink('contact'), icon: 'tabler:mail' },
     ]}
   >
     <Fragment slot="title"> Vogel Tec AB </Fragment>
@@ -61,8 +57,6 @@ const metadata = {
     ]}
   />
 
-  <!-- Content Widget **************** -->
-
   <Content
     isReversed
     tagline="Work"
@@ -93,8 +87,6 @@ const metadata = {
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
   </Content>
-
-  <!-- Content Widget **************** -->
 
   <Content
     isAfterContent
@@ -129,8 +121,6 @@ const metadata = {
     </Fragment>
   </Content>
 
-  <!-- Content Widget **************** -->
-
   <Content
     isReversed
     isAfterContent
@@ -163,8 +153,6 @@ const metadata = {
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
   </Content>
-
-  <!-- Steps Widget ****************** -->
 
   <Steps
     title="Start Your Business Relationship"
@@ -209,8 +197,7 @@ const metadata = {
       {
         variant: 'primary',
         text: 'Contact Me',
-        href: '/contact',
-        target: '_self',
+        href: getPermalink('/contact'),
         icon: 'tabler:mail',
       },
     ]}
