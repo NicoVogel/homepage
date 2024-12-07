@@ -1,41 +1,47 @@
-name: GitHub Actions
+name: Build and Deploy
 
 on:
-  pull_request:
-    branches:
-      - main
   push:
     branches:
       - main
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version:
-          - 18
-          - 20
-          - 22
-    steps:
-      - uses: actions/checkout@v4
-      - name: Use Node.js v${{ matrix.node-version }}
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: npm
-      - run: npm ci
-      - run: npm run build
-      # - run: npm test
 
-  check:
-    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: Use Node.js 22
-        uses: actions/setup-node@v4
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
         with:
-          node-version: 22
-          cache: npm
-      - run: npm ci
-      - run: npm run check
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build
+
+      - name: Move dist to temporary directory
+        run: mv dist ../dist-temp
+
+      - name: Switch to release branch
+        run: |
+          git fetch origin
+          git checkout -B release origin/release
+
+      - name: Remove existing content
+        run: git rm -rf .
+
+      - name: Move new build to release branch
+        run: mv ../dist-temp/* .
+
+      - name: Commit and push changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git add .
+          git commit -m 'Deploy latest build'
+          git push origin release
