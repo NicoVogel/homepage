@@ -18,8 +18,7 @@ const metadata = {
   <Hero
     tagline="About Vogel Tec AB"
     image={{
-      // todo: find better unsplash image
-      src: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      src: 'https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?q=80&w=2342&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
       alt: 'Caos Image',
     }}
   >
@@ -82,34 +81,36 @@ const metadata = {
   />
 
   <Steps2
-    title="Achievements"
-    subtitle="TODO: fill after portfolio"
-    isReversed={true}
+    isReversed
+    title="Portfolio Highlights"
+    subtitle="Notable projects showcasing our expertise and impact across various industries"
     callToAction={{
       text: 'Portfolio',
       href: `${getPermalink('/portfolio')}`,
     }}
     items={[
       {
-        title: 'Global reach',
-        description: 'Nam malesuada urna in enim imperdiet tincidunt. Phasellus non tincidunt nisi, at elementum mi.',
-        icon: 'tabler:globe',
+        title: 'Patient Monitoring UI for Philips',
+        description: 'Developed a scalable, future-proof frontend architecture to enhance healthcare monitoring.',
+        icon: 'tabler:heartbeat',
       },
       {
-        title: 'Positive customer feedback and reviews',
-        description:
-          'Cras semper nulla leo, eget laoreet erat cursus sed. Praesent faucibus massa in purus iaculis dictum.',
-        icon: 'tabler:message-star',
+        title: 'WCAG-Compliant Chatbot for Viind GmbH',
+        description: 'Created an accessible chatbot solution meeting WCAG standards for public sector services.',
+        icon: 'tabler:building',
       },
       {
-        title: 'Awards and recognition as industry experts',
-        description:
-          'Phasellus lacinia cursus velit, eu malesuada magna pretium eu. Etiam aliquet tellus purus, blandit lobortis ex rhoncus vitae.',
-        icon: 'tabler:award',
+        title: 'Micro Frontend Composition for Manufacturing',
+        description: 'Implemented a reliable frontend architecture for seamless integration of complex systems.',
+        icon: 'tabler:tools',
+      },
+      {
+        title: 'Document Generation Software for Automotive Sector',
+        description: 'Developed a full-stack solution to streamline document generation and deployment.',
+        icon: 'tabler:car',
       },
     ]}
   />
-
   <Features2
     title="A Little About Me"
     tagline="Get to know the founder"
