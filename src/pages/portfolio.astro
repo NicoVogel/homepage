@@ -1,10 +1,9 @@
 ---
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Content from '~/components/widgets/Content.astro';
-import Features2 from '~/components/widgets/Features2.astro';
 import Hero from '~/components/widgets/Hero.astro';
-import Testimonials from '~/components/widgets/Testimonials.astro';
 import Layout from '~/layouts/PageLayout.astro';
+import { getPermalink } from '~/utils/permalinks';
 
 const metadata = {
   title: 'Portfolio',
@@ -12,207 +11,181 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
-
   <Hero
-    tagline="TODO Portfolio"
-    title="Elevate your projects with our stunning templates"
-    subtitle="Explore our meticulously crafted templates tailored to various industries and purposes. From captivating presentations to functional website designs, we offer the tools you need to succeed."
-    actions={[{ variant: 'primary', target: '_blank', text: 'Start exploring', href: '/' }]}
+    tagline="Portfolio"
+    title="Real-World Solutions for Complex Challenges"
+    subtitle="At Vogel Tec AB, I specialize in developing custom software solutions that are tailored to the needs of each client. Here are a few examples of projects I've worked on, showcasing the range of my skills and the impact they've had on clients across various industries."
+    actions={[{ variant: 'primary', text: 'View Projects', href: '#projects' }]}
     image={{
       src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
-      alt: 'AstroWind Hero Image',
+      alt: 'Portfolio Hero Image',
     }}
   />
 
-  <!-- Features2 Widget ************** -->
-
-  <Features2
-    title="Explore our diverse templates"
-    subtitle="Discover our selection below to streamline and elevate your projects."
-    columns={3}
-    items={[
-      {
-        title: 'Educational',
-        description:
-          'By harmonizing instructional design and visual appeal, templates streamline content creation for varied materials, expediting development and cultivating engaging educational spaces.',
-        icon: 'tabler:school',
-      },
-      {
-        title: 'Interior Design',
-        description:
-          'Crafting functional, visually appealing spaces for residential and commercial use. Templates emphasize layout, colors, and furniture setups, offering a versatile toolkit for your design vision.',
-        icon: 'tabler:home-star',
-      },
-      {
-        title: 'Photography',
-        description: `Empowering photographers, our templates facilitate captivating storytelling. With a keen focus on layout, galleries, and typography, they cater to both professionals and enthusiasts.`,
-        icon: 'tabler:photo',
-      },
-      {
-        title: 'E-commerce',
-        description:
-          'Developing engaging online stores, our E-commerce templates ensure a dynamic presence to effectively showcase products. Ideal for startups or revamps.',
-        icon: 'tabler:shopping-cart',
-      },
-      {
-        title: 'Business',
-        description:
-          'Providing polished options for effective visual communication, these templates empower both startups and established companies for a professional brand presence.',
-        icon: 'tabler:building-store',
-      },
-      {
-        title: 'Branding',
-        description:
-          'Offering pre-designed elements for a consistent brand identity, including logos and marketing materials. Ideal for new ventures or revamps.',
-        icon: 'tabler:arrow-big-up-lines',
-      },
-      {
-        title: 'Medical',
-        description: `From presentations to patient forms, these tools enhance communication effectiveness for healthcare professionals. Ideal for medical practices and research pursuits.`,
-        icon: 'tabler:vaccine',
-      },
-      {
-        title: 'Fashion Design',
-        description:
-          'With attention to detail, customization, and contemporary design, they empower designers to showcase ideas cohesively. Ideal for all levels of designers.',
-        icon: 'tabler:tie',
-      },
-    ]}
-  />
-
-  <!-- Content Widget **************** -->
-
   <Content
-    isReversed
+    id="projects"
+    title="Patient Monitoring UI for Philips"
+    subtitle="Client: Philips | Industry: Healthcare | Status: Ongoing"
     items={[
       {
-        title: 'High-Quality Designs',
+        title: 'Technologies Used',
         description:
-          'Our templates feature top-tier designs that ensure a professional and polished appearance for your projects.',
-        icon: 'tabler:wand',
+          'TypeScript, LitElements, SCSS, Eslint, Prettier, Playwright, Github Actions, VS Code Dev Containers, Nrwl Nx',
+        icon: 'tabler:tools',
       },
       {
-        title: 'Customization Tools',
+        title: 'Problem',
         description:
-          'Tailor each template to your unique needs with user-friendly customization tools that let you personalize colors, fonts, and content.',
-        icon: 'tabler:settings',
+          'Philips needed a scalable, future-proof frontend architecture for its next-generation patient monitoring system, designed to improve healthcare monitoring processes.',
+        icon: 'tabler:alert-circle',
       },
       {
-        title: 'Pre-Designed Elements',
+        title: 'Solution',
         description:
-          'Save time and effort with our ready-to-use elements, including graphics, icons, and layouts that enhance the visual appeal of your creations.',
-        icon: 'tabler:presentation',
+          'Led the transition to a mono-repo approach using NX tooling, improving the integration of multiple teams and enhancing the development workflow. Created an optimized dev environment to streamline onboarding and improve developer experience.',
+        icon: 'tabler:bulb',
       },
       {
-        title: 'Preview and Mockup Views',
+        title: 'Outcome',
         description:
-          'Visualize the final outcome before making any changes using our preview and mockup views, ensuring your projects meet your expectations.',
-        icon: 'tabler:carousel-horizontal',
+          'Enabled faster development cycles, better collaboration across teams, and a scalable foundation for future expansions.',
+        icon: 'tabler:trending-up',
       },
     ]}
     image={{
       src: 'https://images.unsplash.com/photo-1525909002-1b05e0c869d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
-      alt: 'Features Image',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Main Features</h3>
-    </Fragment>
-  </Content>
-
-  <!-- Content Widget **************** -->
-
-  <Content
-    isAfterContent
-    items={[
-      {
-        title: 'Time Savings',
-        description:
-          'Streamline your workflow, enabling you to create stunning materials efficiently and allocate more time to your core tasks.',
-        icon: 'tabler:clock',
-      },
-      {
-        title: 'Professional Appearance',
-        description:
-          'Elevate your projects with the polished and sophisticated look that our templates provide, making a lasting impression on your audience.',
-        icon: 'tabler:school',
-      },
-      {
-        title: 'Cost-Efficiency',
-        description:
-          'Benefit from cost savings by avoiding the need for custom design work, as our templates offer professional-grade designs at a fraction of the cost.',
-        icon: 'tabler:coin',
-      },
-      {
-        title: 'Instant Download',
-        description:
-          'Enjoy immediate access to your chosen templates upon purchase, enabling you to begin working on your projects without delay.',
-        icon: 'tabler:file-download',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1552664688-cf412ec27db2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
-      alt: 'Benefits Image',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Benefits</h3>
-    </Fragment>
-  </Content>
-
-  <!-- Testimonials Widget *********** -->
-
-  <Testimonials
-    title="Words from real customers"
-    testimonials={[
-      {
-        testimonial: `The designs are not only visually appealing but also highly professional. The templates have saved me a significant amount of time while helping me make a lasting impression on my clients.`,
-        name: 'Emily Kennedy',
-        job: 'Front-end developer',
-        image: {
-          src: 'https://images.unsplash.com/photo-1618835962148-cf177563c6c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=930&q=80',
-          alt: 'Emily Kennedy Image',
-        },
-      },
-      {
-        testimonial: `It beautifully showcases my work, with its clean and elegant design that lets my photographs shine. Customization was a breeze, even for a non-tech person like me. The result is a professional and immersive portfolio that's garnered numerous compliments.`,
-        name: 'Sarah Hansen',
-        job: 'Photographer',
-        image: {
-          src: 'https://images.unsplash.com/photo-1561406636-b80293969660?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
-          alt: 'Sarah Hansen Image',
-        },
-      },
-      {
-        testimonial: `I discovered these templates and I'm impressed by their variety and quality. They've helped me establish a consistent brand image across my marketing and social platforms, elevating my business's overall appearance.`,
-        name: 'Mark Wilkinson',
-        job: 'Small business owner',
-        image: {
-          src: 'https://images.unsplash.com/photo-1545167622-3a6ac756afa4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=824&q=80',
-          alt: 'Mark Wilkinson Image',
-        },
-      },
-    ]}
-    callToAction={{
-      target: '_blank',
-      text: 'More testimonials...',
-      href: 'https://github.com/onwidget/astrowind',
-      icon: 'tabler:chevron-right',
+      alt: 'Patient Monitoring UI Image',
     }}
   />
 
-  <!-- CallToAction Widget *********** -->
+  <Content
+    isReversed
+    title="WCAG-Compliant Chatbot for Viind GmbH"
+    items={[
+      {
+        title: 'Technologies Used',
+        description: 'React Native, Node.js, CI/CD, Github Actions, Docker',
+        icon: 'tabler:tools',
+      },
+      {
+        title: 'Problem',
+        description:
+          'Viind GmbH required a fully accessible chatbot solution that complied with WCAG standards to serve public administrations.',
+        icon: 'tabler:alert-circle',
+      },
+      {
+        title: 'Solution',
+        description:
+          'Built an open-source chatbot from the ground up, handling everything from project setup, architecture, and coding to CI/CD pipelines and deployment.',
+        icon: 'tabler:bulb',
+      },
+      {
+        title: 'Outcome',
+        description:
+          'The chatbot now provides an accessible and compliant solution for public sector use, ensuring that all users, regardless of ability, have access to digital services.',
+        icon: 'tabler:trending-up',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1552664688-cf412ec27db2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
+      alt: 'WCAG-Compliant Chatbot Image',
+    }}
+  >
+    <Fragment slot="subtitle">
+      <span>Client: Viind GmbH | Industry: Public Sector | Status: Ongoing</span>
+    </Fragment>
+  </Content>
+
+  <Content
+    title="Micro Frontend Composition for Manufacturing"
+    items={[
+      {
+        title: 'Technologies Used',
+        description: 'Angular, Stencil, TypeScript, SCSS, Jest, Cypress, Azure DevOps',
+        icon: 'tabler:tools',
+      },
+      {
+        title: 'Problem',
+        description:
+          'The client needed a reliable frontend architecture for a micro frontend composition application that integrated several complex systems.',
+        icon: 'tabler:alert-circle',
+      },
+      {
+        title: 'Solution',
+        description:
+          'Introduced type-safe custom event handling, improved TypeScript strict mode, and coordinated with stakeholders to future-proof the interface.',
+        icon: 'tabler:bulb',
+      },
+      {
+        title: 'Outcome',
+        description:
+          'The micro frontend architecture allowed for seamless integration of multiple applications, improving system stability and reducing bugs.',
+        icon: 'tabler:trending-up',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1525909002-1b05e0c869d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
+      alt: 'Micro Frontend Composition Image',
+    }}
+  >
+    <Fragment slot="subtitle">
+      <span
+        >Client: Employed at Capgemini working in the Manufacturing Sector | Industry: Manufacturing | Status: Completed</span
+      >
+    </Fragment>
+  </Content>
+
+  <Content
+    isReversed
+    isAfterContent
+    title="Document Generation Software for Automotive Sector"
+    items={[
+      {
+        title: 'Technologies Used',
+        description: 'Angular, Node.js, SCSS, Docker, Mocha, Chai, Sinon, Cypress',
+        icon: 'tabler:tools',
+      },
+      {
+        title: 'Problem',
+        description:
+          'The client required a full-stack solution for generating and managing complex documents in the automotive sector, along with streamlined testing and deployment processes.',
+        icon: 'tabler:alert-circle',
+      },
+      {
+        title: 'Solution',
+        description:
+          'Developed a Docker-based environment for local and pipeline testing, implemented automated E2E testing, and ensured type-safe integration between frontend and backend.',
+        icon: 'tabler:bulb',
+      },
+      {
+        title: 'Outcome',
+        description:
+          'Reduced deployment times and improved document generation accuracy, enabling the client to meet critical project deadlines.',
+        icon: 'tabler:trending-up',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1552664688-cf412ec27db2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
+      alt: 'Document Generation Software Image',
+    }}
+  >
+    <Fragment slot="subtitle">
+      <span
+        >Client: Employed at Capgemini working in the Automotive Sector | Industry: Automotive | Status: Completed</span
+      >
+    </Fragment>
+  </Content>
 
   <CallToAction
     actions={[
       {
         variant: 'primary',
-        text: 'Start exploring',
-        href: '/',
+        text: 'Contact Me',
+        href: getPermalink('/contact'),
+        icon: 'tabler:mail',
       },
     ]}
-    title="Dive into our template collection"
-    subtitle="Whether you're in business, design, or education, our templates are here to elevate your projects."
+    title="Let's Work Together"
+    subtitle="I've had the privilege of working on these and many other projects across a range of industries. If you're interested in learning more about how I can help with your project, feel free to reach out."
   />
 </Layout>
