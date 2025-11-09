@@ -8,8 +8,8 @@ _Last updated_: December 07, 2024
 ## Company Details
 
 **Vogel Tec AB**  
-Stallvägen 44A, 1304 lgh  
-35256 Växjö, Sweden  
+Örnens Väg 3, LGH 1301
+136 36 Handen, Sweden  
 
 - **Company Registration Number**: 559493-4266
 - **VAT ID**: SE559493426601
