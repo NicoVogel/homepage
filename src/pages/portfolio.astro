@@ -22,6 +22,38 @@ const metadata = {
     }}
   />
 
+ <Features
+    title="Curala - Medical Documentation Platform for Gratwerk GmbH"
+    tagline="Healthcare"
+    subtitle="Client: Gratwerk GmbH<br>Status: Ongoing"
+    items={[
+      {
+        title: 'Technologies Used',
+        description: 'TypeScript, NextJS, WorkOS, Convex, PostHog, Tailwind, Eslint, Prettier, Bun, Github Actions',
+        icon: 'tabler:tools',
+      },
+      {
+        title: 'Problem',
+        description:
+          'Gratwerk GmbH aims to revolutionize medical documentation to significantly relieve doctors, therapists, and practices in their daily work. For this they need a quickly adaptable software to meet modern needs.',
+        icon: 'tabler:alert-circle',
+      },
+      {
+        title: 'Solution',
+        description:
+          'Working as a full-stack software engineer on Curala. Helped setup the project and design the architecture.',
+        icon: 'tabler:bulb',
+      },
+      {
+        title: 'Outcome',
+        description:
+          'Curala provides a stable, long-term foundation for medical documentation, helping healthcare professionals streamline their workflow and focus more on patient care.',
+        icon: 'tabler:trending-up',
+      },
+    ]}
+    columns={2}
+  />
+
   <Features
     title="Patient Monitoring UI for Philips"
     tagline="Healthcare"
@@ -74,7 +106,7 @@ const metadata = {
       {
         title: 'Solution',
         description:
-          'Built an open-source chatbot from the ground up, handling everything from project setup, architecture, and coding to CI/CD pipelines and deployment.',
+          'Built an open-source chatbot from the ground up, handling everything from project setup, architecture, and coding to CI/CD pipelines and deployment. <a class="underline hover:text-default transition-colors" href="https://gitlab.com/viind/sdp-webchat" target="_blank" rel="noopener">View the GitLab project</a>.',
         icon: 'tabler:bulb',
       },
       {
@@ -150,6 +182,7 @@ const metadata = {
     ]}
     columns={2}
   />
+
   <CallToAction
     actions={[
       {
